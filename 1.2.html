@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        .box1{
+            width: 15px;
+            height: 15px;
+            background: pink;
+            
+        }
+        .box2{
+            width: 15px;
+            height: 15px;
+            background: green;
+        }
+        .box3{
+            width: 15px;
+            height: 15px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" onclick="pink()"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+<script>
+    var body = document.body
+    var box = document.querySelectorAll('div')
+    var box1 = document.querySelector('.box1')
+    var box2 = document.querySelector('.box2')
+    var box3 = document.querySelector('.box3')
+
+    // for(var i=0;i<box.length;i++){
+    //     box[i].index = i;
+    //     box[i].onclick = function(){
+
+    //     }
+    // }
+    function pink(){
+        body.style.backgroundColor = 'pink'
+        box1.style.cssText = 'background:white;border:10px solid pink;'
+        box2.style.cssText = 'width: 15px;height: 15px;background: green;'
+        box3.style.cssText = 'width: 15px;height: 15px;background: blue;'
+    }
+    box2.onclick = function(){
+        body.style.background = 'green'
+        box1.style.cssText = 'width: 15px;height: 15px;background: pink;'
+        box2.style.cssText = 'background:white;border:10px solid green;'
+        box3.style.cssText = 'width: 15px;height: 15px;background: blue;'
+    }
+    box3.onclick = function(){
+        body.style.background = 'blue'
+        box1.style.cssText = 'width: 15px;height: 15px;background: pink;'
+        box2.style.cssText = 'width: 15px;height: 15px;background: green;'
+        box3.style.cssText = 'background:white;border:10px solid blue;'
+    }
+</script>
+</html>
