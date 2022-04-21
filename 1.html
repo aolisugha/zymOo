@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1{
+            margin: 0 auto;
+            width: 500px;
+            text-align: center;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="box1">
+        <input type="button" value="变宽" onclick="bo_width()">
+        <input type="button" value="变高" onclick="bo_height()">
+        <input type="button" value="变色" onclick="bo_color()">
+        <input type="button" value="隐藏" onclick="bo_hidden()">
+        <input type="button" value="重置" onclick="bo_reset()">
+        <div id="box2"></div>
+    </form>
+    <script type="text/javascript">
+        var btow = document.getElementById('box2')
+        function bo_width(){
+            btow.style.width="200px"
+        }
+        function bo_height(){
+            btow.style.height = "200px"
+        }
+        function bo_color(){
+            btow.style.backgroundColor = "red"
+        }
+        function bo_hidden(){
+            btow.style.display = "none"
+        }
+        function bo_reset(){
+            btow.style.cssText = "width: 100px;height: 100px;background-color: black;margin: 10px auto;"
+        }
+    </script>
+</body>
+</html>
