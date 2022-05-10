@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            background-color: black;
+            color: white;
+            list-style: none;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            /* border: 5px solid rgba(238, 19, 173, 0.074); */
+        }
+
+        .active {
+            background-color: white;
+            color: black;
+        }
+         p{
+            display: none;
+        }
+        .showT{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="month">
+        <li>
+            1
+            <p>JAN</p>
+        </li>
+        <li>2
+            <p>FER</p>
+        </li>
+        <li>3
+            <p>MAR</p>
+        </li>
+        <li>4
+            <p>APR</p>
+        </li>
+        <li>5
+            <p>MAY</p>
+        </li>
+        <li>6
+            <p>JUN</p>
+        </li>
+        <li>7
+            <p>JUL</p>
+        </li>
+        <li>8
+            <p>AUG</p>
+        </li>
+        <li>9
+            <p>SEP</p>
+        </li>
+        <li>10
+            <p>OCT</p>
+        </li>
+        <li>11
+            <p>NOV</p>
+        </li>
+        <li>12
+            <p>DEC</p>
+        </li>
+    </ul>
+    <div id="valval">
+        <p><span>1月节日</span>元旦：1月1日至3日放假三天</p>
+        <p><span>2月节日</span>2月2日至8日放假7天。</p>
+        <p><span>3月节日</span>妇女节：3月8日妇女节，与我无关。</p>
+        <p><span>4月节日</span>清明节：4月3日至5日放假3天</p>
+        <p><span>5月节日</span>劳动节：4月30日至5月2日放假3天。</p>
+        <p class="pCurrent"><span>6月节日</span>端午节：6月4日至6日放假3天。</p>
+        <p><span>7月节日</span>小暑：7月7日小暑。不放假。</p>
+        <p><span>8月节日</span>七夕节：8月6日七夕节。不放假。</p>
+        <p><span>9月节日</span>中秋节：9月10日至12日放假3天。</p>
+        <p><span>10月节日</span>国庆节：10月1日至7日放假7天。</p>
+        <p><span>11月节日</span>立冬：11月8日立冬。不放假</p>
+        <p><span>12月节日</span>艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。</p>
+    </div>
+</body>
+<script>
+    var secItem = document.getElementById('month').getElementsByTagName('li')
+    var showBox = document.getElementById('valval')
+    var showText = document.getElementById('valval').getElementsByTagName('p')
+    for (var i = 0; i < secItem.length; i++) {
+        secItem[i].index = i
+        console.log(i);
+        secItem[i].onmouseover = function () {
+            for (var x in secItem) {
+                secItem[x].className = ""
+            }
+            this.className = "active"
+            for(var y in showText){
+                showText[y].className = ''
+            }
+            showText[this.index].className = "showT"
+        }
+    }
+    // console.log(secItem);
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <input type="text" id="one"> + <input type="text" id="two">=<span id="sum">?</span> <button>求和</button>
+</body>
+<script>
+    var getSum = document.getElementsByTagName('button')
+
+    console.log(getSum);
+
+    getSum[0].onclick = function () {
+        var sum = 0
+        var one = document.getElementById('one').value
+        var two = document.getElementById('two').value
+        sum += parseInt(one) + parseInt(two)
+        console.log(sum);
+        var setSum = document.getElementById('sum')
+        setSum.innerHTML = sum
+        console.log(setSum);
+    }
+</script>
+
+</html>

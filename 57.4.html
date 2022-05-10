@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .timeBox{
+        width: 360px;
+        height: 80px;
+        line-height: 80px;
+        margin: 30px auto;
+        background-color: blueviolet;
+        text-align: center;
+    }
+    .timeBox input{
+        outline: none;
+        width: 35px;
+        height: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="timeBox">
+        <input type="text" id="hours"><span>时</span>
+        <input type="text" id="min"><span>分</span>
+        <input type="text" id="sec"><span>秒</span>
+    </div>
+</body>
+<script>
+    var sec = document.getElementById('sec')
+    var min = document.getElementById('min')
+    var hours = document.getElementById('hours')
+
+    getTime()
+
+    setInterval(() => {
+        getTime()
+    }, 1000);
+
+    function getTime(){
+        hours.value = new Date().getHours()
+        min.value = new Date().getMinutes()
+        sec.value = new Date().getSeconds()
+    }
+</script>
+</html>
